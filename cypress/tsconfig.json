@@ -1,0 +1,4 @@
+{
+  "extends": "../cypress-diary-app/tsconfig.json",
+  "include": ["integration/*.ts", "support/*.ts", "../node_modules/cypress"]
+}

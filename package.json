@@ -1,0 +1,43 @@
+{
+  "name": "cypress-diary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:coverage-api": "cd cypress-diary-api && pm2 start --name cypress-diary-api npm -- run start:coverage && pm2 save && cd ../",
+    "test:coverage-app": "cd cypress-diary-app && pm2 start --name cypress-diary-app npm -- run start && pm2 save && cd ../",
+    "test:coverage": "rm -rf .nyc_output && rm -rf coverage && npm run test:coverage-api && npm run test:coverage-app && npx cypress run && pm2 delete cypress-diary-api && pm2 delete cypress-diary-app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.8.2"
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "include": [
+      "cypress-diary-app/src/**/*.ts",
+      "cypress-diary-api/**/*.js"
+    ],
+    "exclude": [
+      "**/*.spec.js"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  },
+  "devDependencies": {
+    "@briebug/cypress-schematic": "^3.2.0",
+    "@cypress/code-coverage": "^1.10.4",
+    "@cypress/browserify-preprocessor": "^2.1.1",
+    "@cypress/webpack-preprocessor": "4.1.0",
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "cypress": "^3.8.2",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "istanbul-lib-coverage": "^3.0.0",
+    "nyc": "^15.0.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1"
+  }
+}

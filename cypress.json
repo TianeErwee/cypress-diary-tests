@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:4200",
+  "env": {
+    "apiUrl": "http://localhost:3000",
+    "codeCoverage": {
+      "url": "http://localhost:3000/__coverage__"
+    }
+  },
+  "viewportHeight": 1000,
+  "viewportWidth": 1000
+}
