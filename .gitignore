@@ -102,3 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# App and API
+cypress-diary-api/
+cypress-diary-app/
+
+# Cypress output
+cypress/videos/
