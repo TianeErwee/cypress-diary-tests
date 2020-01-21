@@ -2,9 +2,8 @@
 
 describe('nav', () => {
   it('should open dashboard', () => {
-    cy.visit('http://localhost:4200/');
+    cy.visit('/');
     cy.url().should('include', '/dashboard');
-    cy.wait(1000);
   });
 
   it('should open list of entries', () => {
@@ -20,6 +19,15 @@ describe('nav', () => {
   it('should go back to list on cancel', () => {
     cy.get('#cancel').click();
     cy.url().should('include', '/entries/list');
+  });
+
+  [1, 5].forEach((entry) => {
+    it('should click on entry ' + entry, () => {
+      cy.get(`#view-entry${entry}`).click();
+      cy.url().should('include', `/entries/view-entry/${entry}`);
+      cy.get('#back').click();
+      cy.url().should('include', '/entries/list');
+    })
   });
 
   it('should navigate to first entry in list', () => {
