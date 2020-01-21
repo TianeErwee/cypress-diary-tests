@@ -109,3 +109,4 @@ cypress-diary-app/
 
 # Cypress output
 cypress/videos/
+cypress/screenshots/
