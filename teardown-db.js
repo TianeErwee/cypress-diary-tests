@@ -13,7 +13,7 @@ db.connect((err) => {
   console.log('Connected to database');
 });
 
-db.query('CREATE DATABASE `cypress-test`', (err, result, fields) => {
+db.query('DROP DATABASE `cypress-test`;', (err, result, fields) => {
   if (!!err) {
     console.log(err);
   } else {
