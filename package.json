@@ -8,9 +8,9 @@
     "start:api": "cd cypress-diary-api && pm2 start --name cypress-diary-api npm -- run start && pm2 save && cd ../",
     "start:app": "cd cypress-diary-app && pm2 start --name cypress-diary-app npm -- run start && pm2 save && cd ../",
     "stop": "pm2 delete cypress-diary-api && pm2 delete cypress-diary-app && pm2 save --force",
-    "test:coverage-api": "cd cypress-diary-api && pm2 start --name cypress-diary-api npm -- run start:coverage && pm2 save && cd ../",
+    "test:coverage-api": "cd cypress-diary-api && DB_HOST=localhost DB_USER=root DB_PASS=password DB_DATABASE=cypress-diary pm2 start --name cypress-diary-api npm -- run start:coverage && pm2 save && cd ../",
     "test:coverage-app": "cd cypress-diary-app && pm2 start --name cypress-diary-app npm -- run start && pm2 save && cd ../",
-    "test:coverage": "rm -rf .nyc_output && rm -rf coverage && node create-db && npm run test:coverage-app && npm run test:coverage-api && npx cypress run && pm2 delete cypress-diary-api && pm2 delete cypress-diary-app && pm2 save --force"
+    "test:coverage": "rm -rf .nyc_output && rm -rf coverage && npm run test:coverage-app && npm run test:coverage-api && npx cypress run && pm2 delete cypress-diary-api && pm2 delete cypress-diary-app && pm2 save --force"
   },
   "author": "",
   "license": "ISC",
