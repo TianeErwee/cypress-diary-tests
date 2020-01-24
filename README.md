@@ -21,8 +21,8 @@ Clone this repository
 Run the `npm install` command
 
 Inside of this repository clone the following:
-[Angular Frontend](https://github.com/TianeErwee/cypress-diary-app)
-[Node.js Backend](https://github.com/TianeErwee/cypress-diary-api)
+* [Angular Frontend](https://github.com/TianeErwee/cypress-diary-app)
+* [Node.js Backend](https://github.com/TianeErwee/cypress-diary-api)
 
 Your local structure should now look like this:
 - cypress-diary-tests
@@ -39,4 +39,5 @@ To run the e2e tests and generate coverage report you can run `npm run test:cove
 Go to:
 - coverage
   - lcov-report
+
 And open index.html in your browser.
